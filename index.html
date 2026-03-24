@@ -9,6 +9,11 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <style>
+    /* 🔥 2x Font Size */
+    html {
+      font-size: 200%;
+    }
+
     body {
       height: 100vh;
       display: flex;
@@ -17,19 +22,27 @@
       color: white;
     }
 
+    /* 🔥 3x Navbar */
+    .navbar {
+      padding: 30px 0 !important;
+      font-size: 1.5rem !important;
+    }
+
+    /* 🔥 Main Section */
     .main {
       flex: 1;
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 15px;
+      padding: 20px;
     }
 
+    /* 🔥 Bigger Card */
     .card-box {
       width: 100%;
-      max-width: 500px;
-      padding: 40px 25px;
-      border-radius: 20px;
+      max-width: 700px;
+      padding: 60px 40px;
+      border-radius: 25px;
       text-align: center;
       background: rgba(255,255,255,0.15);
       backdrop-filter: blur(12px);
@@ -38,13 +51,18 @@
     }
 
     h2 {
-      font-size: 24px;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
     }
 
     .btn-container {
       position: relative;
-      height: 120px;
+      height: 140px;
+    }
+
+    /* 🔥 Bigger Buttons */
+    .btn {
+      font-size: 1.2rem !important;
+      padding: 14px 32px !important;
     }
 
     #noBtn {
@@ -52,15 +70,28 @@
     }
 
     #message {
-      margin-top: 25px;
-      font-size: 20px;
+      margin-top: 30px;
+      font-size: 1.2rem;
       font-weight: bold;
       opacity: 0;
       transition: 0.5s;
     }
 
+    /* 🔥 3x Footer */
     footer {
-      font-size: 14px;
+      padding: 25px 0 !important;
+      font-size: 1.3rem !important;
+    }
+
+    /* 📱 Mobile Optimization */
+    @media (max-width: 480px) {
+      html {
+        font-size: 150%;
+      }
+
+      .card-box {
+        padding: 50px 25px;
+      }
     }
   </style>
 </head>
@@ -70,7 +101,7 @@
   <!-- Navbar -->
   <nav class="navbar bg-dark bg-opacity-50">
     <div class="container justify-content-center">
-      <span class="navbar-brand mb-0 h6 text-white">
+      <span class="navbar-brand mb-0 text-white">
         📊 Review of June 2026 Exam
       </span>
     </div>
@@ -83,8 +114,8 @@
       <h2>📚 Have you completed your exam preparation?</h2>
 
       <div class="btn-container">
-        <button class="btn btn-success me-3 px-4 py-2" onclick="handleYes()">Yes ✅</button>
-        <button class="btn btn-danger px-4 py-2" id="noBtn">No ❌</button>
+        <button class="btn btn-success me-3" onclick="handleYes()">Yes ✅</button>
+        <button class="btn btn-danger" id="noBtn">No ❌</button>
       </div>
 
       <div id="message"></div>
@@ -93,7 +124,7 @@
   </div>
 
   <!-- Footer -->
-  <footer class="text-center bg-dark bg-opacity-50 py-2">
+  <footer class="text-center bg-dark bg-opacity-50">
     © All Rights Reserved | Rakesh Kumar
   </footer>
 
@@ -105,8 +136,8 @@
       const box = document.querySelector(".card-box");
       const rect = box.getBoundingClientRect();
 
-      const x = Math.random() * (rect.width - 100);
-      const y = Math.random() * (rect.height - 80);
+      const x = Math.random() * (rect.width - 120);
+      const y = Math.random() * (rect.height - 100);
 
       noBtn.style.left = x + "px";
       noBtn.style.top = y + "px";
